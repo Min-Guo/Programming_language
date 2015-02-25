@@ -1,8 +1,10 @@
 package MatrixMult is
-  size : integer := N ;
+  size : Integer := N ;
   type FirstMatrix is
-    array (1 .. N, 1 .. N) of Integer;
+    array (1 .. size, 1 .. size) of Integer;
   type SecondMatrix is
-    array (1 .. N, 1 .. N) of Integer;
-  procedure MatrixMult(FirstMatrix : array; SecondMatrix : array);
+    array (1 .. size, 1 .. size) of Integer;
+  type ThirdMatrix is
+    array (1 .. size, 1 .. size) of Integer;
+  procedure MatrixMult(A, B, C : array);
 end MatrixMult;
