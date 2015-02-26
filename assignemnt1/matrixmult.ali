@@ -15,7 +15,7 @@ RV SPARK
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U matrixmult%b		matrixmult.adb		10fa3be6 NE OO PK
+U matrixmult%b		matrixmult.adb		c72431ea NE OO PK
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W system%s		system.ads		system.ali
@@ -28,7 +28,7 @@ W system.tasking%s	s-taskin.adb		s-taskin.ali
 W system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
 W system.tasking.stages%s  s-tassta.adb		s-tassta.ali
 
-U matrixmult%s		matrixmult.ads		ee5709a3 EE NE OO PK
+U matrixmult%s		matrixmult.ads		398903af EE NE OO PK
 
 D ada.ads		20130417131023 3ffc8e18
 D a-except.ads		20130417131019 10fcae55
@@ -39,7 +39,7 @@ D a-tags.ads		20130417131022 6c0509d0
 D a-unccon.ads		20130417131022 f9eb8f06
 D interfac.ads		20130417131027 cb4a8015
 D i-c.ads		20130417131026 5421119b
-D matrixmult.ads	20150226174640 ee5709a3
+D matrixmult.ads	20150226202758 398903af
 D matrixmult.adb	20150226202714 fead3245
 D system.ads		20130417131036 f2f2d889
 D s-atacco.ads		20130417131028 4c36d12f
