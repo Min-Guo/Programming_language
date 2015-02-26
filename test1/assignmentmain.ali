@@ -15,7 +15,7 @@ RV SPARK
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U assignmentmain%b	assignmentmain.adb	d7d50762 NE OO SU IL KM
+U assignmentmain%b	assignmentmain.adb	30f5e2bf NE OO SU IL KM
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -44,7 +44,7 @@ D a-tiinau.ads		20130417131022 8114c8e4
 D a-tiinio.ads		20130417131022 aa04e5d6
 D a-tiinio.adb		20130417131022 df9cd7af
 D a-unccon.ads		20130417131022 f9eb8f06
-D assignmentmain.adb	20150226172815 01effb15
+D assignmentmain.adb	20150226193811 e6cf1ec8
 D interfac.ads		20130417131027 cb4a8015
 D i-c.ads		20130417131026 5421119b
 D i-cstrea.ads		20130417131026 8128536b
@@ -83,34 +83,35 @@ X 1 ada.ads
 16K9*Ada 19e8 13|1r6 1r23
 X 8 a-textio.ads
 49K13*Text_IO 471e16 13|1w10 1r27
-166U14*New_Line 13|52s17
+166U14*New_Line 13|56s17
 X 10 a-tiinio.ads
 45k21*Integer_IO 84e27 13|5r31
-55U14 Get 13|25s33[5] 37s33[5]
-65U14 Put 13|50s33[5]
+55U14 Get 13|28s33[5] 41s33[5]
+65U14 Put 13|54s33[5]
 X 13 assignmentmain.adb
-4U11*AssignmentMain 4b11 60t4
+4U11*AssignmentMain 4b11 65t4
 5K17 int_io[10|45] 6r13
-7i9 element{integer} 25m37 26r54 37m37 38r55
-8a9 FirstMatrix{17|3A8} 26m33 59r17
-9a9 SecondMatrix{17|3A8} 38m33 59r30
-10a9 ThirdMatrix{17|3A8} 50r37 59m44
-12t14 Read1 21b19 30t12
-13t14 Read2 29r17 32b19 42t12
-14Y23 onedone 29s23 34b24
-16t14 Printer 41r17 44b19 55t12
-17Y23 twodone 41s25 46b24
-23i21 i{integer} 26r45
-24i29 j{integer} 26r48
-35i21 i{integer} 38r46
-36i29 j{integer} 38r49
-48i21 i{integer} 50r49
-49i29 j{integer} 50r52
+7i9 element{integer} 28m37 29r54 41m37 42r55
+8a9 FirstMatrix{17|3A8} 29m33 63r17
+9a9 SecondMatrix{17|3A8} 42m33 63r30
+10a9 ThirdMatrix{17|3A8} 54r37 63m44
+12t14 Read1 23b19 34t12 62r9
+13Y23 onestart 25b16 33t12 62s15
+15t14 Read2 32r17 36b19 46t12
+16Y23 onedone 32s23 38b24 45t20
+18t14 Printer 48b19 59t12 64r9
+19Y23 maindone 50b24 58t20 64s17
+26i21 i{integer} 29r45
+27i29 j{integer} 29r48
+39i21 i{integer} 42r46
+40i29 j{integer} 42r49
+52i21 i{integer} 54r49
+53i29 j{integer} 54r52
 X 17 matrixmult.ads
 1K9*MatrixMult 13|2w6 2r22 17|6e15
-2i3*size{integer} 13|23r31 24r39 35r31 36r39 48r31 49r39
+2i3*size{integer} 13|26r31 27r39 39r31 40r39 52r31 53r39
 3A8*Matrix(integer)<integer><integer> 13|8r23 9r24 10r23
-5U13*MatMult 13|59s9
+5U13*MatMult 13|63s9
 X 32 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22

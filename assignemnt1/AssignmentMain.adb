@@ -9,17 +9,20 @@ Procedure AssignmentMain is
   	SecondMatrix : Matrix;
   	ThirdMatrix : Matrix;
 
-  	task Read1;
+  	task Read1 is
+  		entry onestart;
+  	end Read1;
   	task Read2 is
   		entry onedone;
   	end Read2;
   	task Printer is
-  		entry twodone;
+  		entry maindone;
   	end Printer;
 
   	
   	task body Read1 is
   	begin
+  	accept onestart do
   		for i in 1 .. size loop
 			for j in 1 .. size loop
 				get(element);
@@ -27,23 +30,24 @@ Procedure AssignmentMain is
 			end loop;
 		end loop; 
 		Read2.onedone;
+	end;
 	end; 
 	
 	task body Read2 is
 	begin
-		accept onedone;
+		accept onedone do
 		for i in 1 .. size loop
 			for j in 1 .. size loop
 				get(element);
 				SecondMatrix(i, j) := element;
 			end loop;
 		end loop; 
-		Printer.twodone;
+		end;
 	end;
 	
 	task body Printer is
 	begin
-		accept twodone;
+		accept maindone do
 		
 		for i in 1 .. size loop
 			for j in 1 .. size loop
@@ -51,10 +55,11 @@ Procedure AssignmentMain is
 			end loop;
 		new_line;
 		end loop; 
-
+		end;
 	end;
 		
-
 begin
+	Read1.onestart;
 	MatMult(FirstMatrix, SecondMatrix, ThirdMatrix);
+	printer.maindone;
 end;
