@@ -9,9 +9,10 @@ procedure MatMult(A, B : in Matrix; C : out Matrix) is
 	AllTask : array (1 .. size, 1 .. size) of MultiplyMatrix;
 
 	task body MultiplyMatrix is
-	C(i, j): Integer := 0;
+	
 	begin 
  		accept concurrentTask(i, j: Integer; A, B : in Matrix; C : out Matrix) do
+ 			C(i, j):= 0;
  			for k in 1 .. size loop
  			C(i, j) := C(i, j) + A(i, k) * B(k, j);
  			end loop;

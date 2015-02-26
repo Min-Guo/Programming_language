@@ -8,16 +8,16 @@ Procedure AssignmentMain is
   	FirstMatrix : Matrix;
   	SecondMatrix : Matrix;
   	ThirdMatrix : Matrix;
-
   	task Read1 is
   		entry onestart;
   	end Read1;
-  	task Read2 is
+	task Read2 is
   		entry onedone;
   	end Read2;
   	task Printer is
   		entry maindone;
   	end Printer;
+
 
   	
   	task body Read1 is
@@ -48,7 +48,6 @@ Procedure AssignmentMain is
 	task body Printer is
 	begin
 		accept maindone do
-		
 		for i in 1 .. size loop
 			for j in 1 .. size loop
 				put(ThirdMatrix(i, j));
@@ -58,6 +57,7 @@ Procedure AssignmentMain is
 		end;
 	end;
 		
+
 begin
 	Read1.onestart;
 	MatMult(FirstMatrix, SecondMatrix, ThirdMatrix);

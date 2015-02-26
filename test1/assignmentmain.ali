@@ -44,7 +44,7 @@ D a-tiinau.ads		20130417131022 8114c8e4
 D a-tiinio.ads		20130417131022 aa04e5d6
 D a-tiinio.adb		20130417131022 df9cd7af
 D a-unccon.ads		20130417131022 f9eb8f06
-D assignmentmain.adb	20150226193811 e6cf1ec8
+D assignmentmain.adb	20150226202340 e6cf1ec8
 D interfac.ads		20130417131027 cb4a8015
 D i-c.ads		20130417131026 5421119b
 D i-cstrea.ads		20130417131026 8128536b
@@ -83,33 +83,33 @@ X 1 ada.ads
 16K9*Ada 19e8 13|1r6 1r23
 X 8 a-textio.ads
 49K13*Text_IO 471e16 13|1w10 1r27
-166U14*New_Line 13|56s17
+166U14*New_Line 13|55s17
 X 10 a-tiinio.ads
 45k21*Integer_IO 84e27 13|5r31
 55U14 Get 13|28s33[5] 41s33[5]
-65U14 Put 13|54s33[5]
+65U14 Put 13|53s33[5]
 X 13 assignmentmain.adb
 4U11*AssignmentMain 4b11 65t4
 5K17 int_io[10|45] 6r13
 7i9 element{integer} 28m37 29r54 41m37 42r55
 8a9 FirstMatrix{17|3A8} 29m33 63r17
 9a9 SecondMatrix{17|3A8} 42m33 63r30
-10a9 ThirdMatrix{17|3A8} 54r37 63m44
-12t14 Read1 23b19 34t12 62r9
-13Y23 onestart 25b16 33t12 62s15
-15t14 Read2 32r17 36b19 46t12
-16Y23 onedone 32s23 38b24 45t20
-18t14 Printer 48b19 59t12 64r9
-19Y23 maindone 50b24 58t20 64s17
+10a9 ThirdMatrix{17|3A8} 53r37 63m44
+11t14 Read1 23b19 34t12 62r9
+12Y23 onestart 25b16 33t12 62s15
+14t14 Read2 32r17 36b19 46t12
+15Y23 onedone 32s23 38b24 45t20
+17t14 Printer 48b19 58t12 64r9
+18Y23 maindone 50b24 57t20 64s17
 26i21 i{integer} 29r45
 27i29 j{integer} 29r48
 39i21 i{integer} 42r46
 40i29 j{integer} 42r49
-52i21 i{integer} 54r49
-53i29 j{integer} 54r52
+51i21 i{integer} 53r49
+52i29 j{integer} 53r52
 X 17 matrixmult.ads
 1K9*MatrixMult 13|2w6 2r22 17|6e15
-2i3*size{integer} 13|26r31 27r39 39r31 40r39 52r31 53r39
+2i3*size{integer} 13|26r31 27r39 39r31 40r39 51r31 52r39
 3A8*Matrix(integer)<integer><integer> 13|8r23 9r24 10r23
 5U13*MatMult 13|63s9
 X 32 s-stausa.ads

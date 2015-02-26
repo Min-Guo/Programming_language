@@ -15,7 +15,7 @@ RV SPARK
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U matrixmult%b		matrixmult.adb		2416b858 NE OO PK
+U matrixmult%b		matrixmult.adb		10fa3be6 NE OO PK
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W system%s		system.ads		system.ali
@@ -40,7 +40,7 @@ D a-unccon.ads		20130417131022 f9eb8f06
 D interfac.ads		20130417131027 cb4a8015
 D i-c.ads		20130417131026 5421119b
 D matrixmult.ads	20150226174640 ee5709a3
-D matrixmult.adb	20150226174630 ca41b1fb
+D matrixmult.adb	20150226202714 fead3245
 D system.ads		20130417131036 f2f2d889
 D s-atacco.ads		20130417131028 4c36d12f
 D s-exctab.ads		20130417131029 66e51330
@@ -71,31 +71,31 @@ D s-tassta.ads		20130417131033 70812003
 D s-traent.ads		20130417131033 5221ee41
 D s-unstyp.ads		20130417131034 6ae15c76
 X 10 matrixmult.ads
-1K9*MatrixMult 6l5 6e15 11|1b14 29l5 29t15
-2i3*size{integer} 4r17 4r28 11|9r31 9r42 15r39 22r15 23r23
+1K9*MatrixMult 6l5 6e15 11|1b14 30l5 30t15
+2i3*size{integer} 4r17 4r28 11|9r31 9r42 16r39 23r15 24r23
 3A8*Matrix(integer)<integer><integer> 5r31 5r47 11|3r29 3r45 6r64 6r80 14r64
 . 14r80
-5U13*MatMult 5>21 5>24 5<39 11|3b11 27l5 27t12
-5a21 A{3A8} 11|3b19 24r53
-5a24 B{3A8} 11|3b22 24r56
-5a39 C{3A8} 11|3b37 24m59
+5U13*MatMult 5>21 5>24 5<39 11|3b11 28l5 28t12
+5a21 A{3A8} 11|3b19 25r53
+5a24 B{3A8} 11|3b22 25r56
+5a39 C{3A8} 11|3b37 25m59
 X 11 matrixmult.adb
-5T19 MultiplyMatrix 7l13 7e27 9r51 11b19 19l13 19t27
-6Y23 concurrentTask 6>38 6>41 6>54 6>57 6<72 14b24 18l21 18t35 24s31
-6i38 i{integer} 16r27 16r38 16r48
-6i41 j{integer} 16r30 16r41 16r61
-6a54 A{10|3A8} 16r46
-6a57 B{10|3A8} 16r56
-6a72 C{10|3A8} 16m25 16r25 16r36
-9a9 AllTask(5T19) 24r17
+5T19 MultiplyMatrix 7l13 7e27 9r51 11b19 20l13 20t27
+6Y23 concurrentTask 6>38 6>41 6>54 6>57 6<72 14b24 19l21 19t35 25s31
+6i38 i{integer} 15r27 17r27 17r38 17r48
+6i41 j{integer} 15r30 17r30 17r41 17r61
+6a54 A{10|3A8} 17r46
+6a57 B{10|3A8} 17r56
+6a72 C{10|3A8} 15m25 15r25 17m25 17r25 17r36
+9a9 AllTask(5T19) 25r17
 14i39 i{integer}
 14i42 j{integer}
 14a54 A{10|3A8}
 14a57 B{10|3A8}
 14a72 C{10|3A8}
-15i29 k{integer} 16r51 16r58
-22i5 i{integer} 24r25 24r46
-23i13 j{integer} 24r28 24r49
+16i29 k{integer} 17r51 17r58
+23i5 i{integer} 25r25 25r46
+24i13 j{integer} 25r28 25r49
 X 26 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
