@@ -5,6 +5,7 @@ P SS ZX
 RN
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTIONS
+RV NO_IO
 RV NO_IMPLICIT_LOOPS
 RV NO_SECONDARY_STACK
 RV NO_STANDARD_STORAGE_POOLS
@@ -12,12 +13,15 @@ RV NO_TASK_HIERARCHY
 RV NO_TASKING
 RV NO_DEFAULT_INITIALIZATION
 RV SPARK
-RV MAX_TASK_ENTRIES=1
+RV MAX_TASK_ENTRIES=2
 RV MAX_TASKS=1+
 
-U matrixmult%b		matrixmult.adb		c72431ea NE OO PK
+U matrixmult%b		matrixmult.adb		a51df8fa NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
 W system%s		system.ads		system.ali
 W system.img_int%s	s-imgint.adb		s-imgint.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
@@ -28,22 +32,29 @@ W system.tasking%s	s-taskin.adb		s-taskin.ali
 W system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
 W system.tasking.stages%s  s-tassta.adb		s-tassta.ali
 
-U matrixmult%s		matrixmult.ads		398903af EE NE OO PK
+U matrixmult%s		matrixmult.ads		6e466892 EE NE OO PK
 
 D ada.ads		20130417131023 3ffc8e18
 D a-except.ads		20130417131019 10fcae55
 D a-finali.ads		20130417131020 52ecdc1b
+D a-inteio.ads		20130417131020 f64b89a4
+D a-ioexce.ads		20130417131020 8b9de6cd
 D a-reatim.ads		20130417131021 63f07669
 D a-stream.ads		20130417131021 2ca4ee37
 D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tiinio.ads		20130417131022 aa04e5d6
 D a-unccon.ads		20130417131022 f9eb8f06
 D interfac.ads		20130417131027 cb4a8015
 D i-c.ads		20130417131026 5421119b
-D matrixmult.ads	20150226202758 398903af
-D matrixmult.adb	20150226202714 fead3245
+D i-cstrea.ads		20130417131026 8128536b
+D matrixmult.ads	20150228031048 6e466892
+D matrixmult.adb	20150228033007 057dec18
 D system.ads		20130417131036 f2f2d889
 D s-atacco.ads		20130417131028 4c36d12f
+D s-crtl.ads		20130417131029 dfcfca61
 D s-exctab.ads		20130417131029 66e51330
+D s-ficobl.ads		20130417131029 55a71d43
 D s-finmas.ads		20130417131029 b95bb341
 D s-finroo.ads		20130417131029 4ff27390
 D s-imgint.ads		20130417131030 02dbe0c2
@@ -70,33 +81,47 @@ D s-tasren.ads		20130417131033 a67a9949
 D s-tassta.ads		20130417131033 70812003
 D s-traent.ads		20130417131033 5221ee41
 D s-unstyp.ads		20130417131034 6ae15c76
-X 10 matrixmult.ads
-1K9*MatrixMult 6l5 6e15 11|1b14 30l5 30t15
-2i3*size{integer} 4r17 4r28 11|9r31 9r42 16r39 23r15 24r23
-3A8*Matrix(integer)<integer><integer> 5r31 5r47 11|3r29 3r45 6r64 6r80 14r64
-. 14r80
-5U13*MatMult 5>21 5>24 5<39 11|3b11 28l5 28t12
-5a21 A{3A8} 11|3b19 25r53
-5a24 B{3A8} 11|3b22 25r56
-5a39 C{3A8} 11|3b37 25m59
-X 11 matrixmult.adb
-5T19 MultiplyMatrix 7l13 7e27 9r51 11b19 20l13 20t27
-6Y23 concurrentTask 6>38 6>41 6>54 6>57 6<72 14b24 19l21 19t35 25s31
-6i38 i{integer} 15r27 17r27 17r38 17r48
-6i41 j{integer} 15r30 17r30 17r41 17r61
-6a54 A{10|3A8} 17r46
-6a57 B{10|3A8} 17r56
-6a72 C{10|3A8} 15m25 15r25 17m25 17r25 17r36
-9a9 AllTask(5T19) 25r17
-14i39 i{integer}
-14i42 j{integer}
-14a54 A{10|3A8}
-14a57 B{10|3A8}
-14a72 C{10|3A8}
-16i29 k{integer} 17r51 17r58
-23i5 i{integer} 25r25 25r46
-24i13 j{integer} 25r28 25r49
-X 26 s-stausa.ads
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 16|1r6 1r31 2r6 2r23
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[10|45] 16|1w10 1r35
+X 9 a-textio.ads
+49K13*Text_IO 471e16 16|2w10 2r27
+166U14*New_Line 16|26s25 34s25
+X 10 a-tiinio.ads
+65U14*Put 16|23s25[4|18] 24s25[4|18] 25s25[4|18] 33s25[4|18]
+X 15 matrixmult.ads
+1K9*MatrixMult 6l5 6e15 16|4b14 52l5 52t15
+2i3*size{integer} 4r17 4r28 16|13r31 13r42
+3A8*Matrix(integer)<integer><integer> 5r31 5r47 16|6r29 6r45 9r64 9r80 19r64
+. 19r80
+5U13*MatMult 5>21 5>24 5<39 16|6b11 50l5 50t12
+5a21 A{3A8} 16|6b19
+5a24 B{3A8} 16|6b22
+5a39 C{3A8} 16|6b37
+X 16 matrixmult.adb
+8T19 MultiplyMatrix 11l13 11e27 13r51 14r34 16b19 37l13 37t27
+9Y23 concurrentTask 9>38 9>41 9>54 9>57 9<72 19b24 29l21 29t35
+9i38 i{integer} 20r27 23r29
+9i41 j{integer} 20r30 24r29
+9a54 A{15|3A8}
+9a57 B{15|3A8}
+9a72 C{15|3A8} 20m25 20r25
+10Y23 test 10>28 31b24 36l21 36t25 47s17
+10i28 i{integer} 33r29
+13a9 AllTask(8T19)
+14a9 Test(8T19) 47r9
+19i39 i{integer}
+19i42 j{integer}
+19a54 A{15|3A8}
+19a57 B{15|3A8}
+19a72 C{15|3A8}
+21i29 k{integer} 25r29
+31i29 i{integer}
+32i29 k{integer}
+45i5 i{integer} 47r14 47r22
+X 33 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 
