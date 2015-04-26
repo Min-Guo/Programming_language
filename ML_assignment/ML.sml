@@ -17,7 +17,7 @@ fun intBubble [] = []
 and
 min (n::nil) = n
  | min (x::y::t) = if (x > y) then min (y::t)
-                    else min (x::t);
+                    else min (x::t)
 and
 extract [] = []
  | extract (h::t) = if h = min (h::t) then t
@@ -27,7 +27,7 @@ extract [] = []
 Problem 2:
 
 fun intBubbleSort [n] = [n]
- | intBubbleSort (h::t) = headList (inBubble (h::t)) :: intBubbleSort (tailList (inBubble (h::t)))
+ | intBubbleSort (h::t) = headList (intBubble (h::t)) :: intBubbleSort (restList (intBubble (h::t)))
 and 
 headList [n] = n
  | headList (h::t) = h
@@ -53,4 +53,22 @@ restList [n] = []
  								else y::sort length (x::t)
  in if sort length (h::t) = (h::t) then (h::t)
  						else bubbleSort length (sort length (h::t)) end;
+
+ Problem 4:
+
+ datatype 'a mytree = leaf of 'a | node of 'a mytree list;
+
+ Problem 5:
+
+ fun max (x, y) = if x > y then x else y;
+
+fun height (leaf(_)) = (print("leaf "); 0)
+| height(node(y::ys)) = ( print("123 "); 1 + max ( (height y), ((height (node ys) - 1))))
+| height(_) = 0;
+
+
+ Problem 6:
+
+ fun sortTree (op <) (leaf (h::t)) =  leaf (bubbleSort (op <) (h::t))
+ | sortTree (op <) (node (h::t)) = node (map (fn x => (sortTree (op<) x)) (h::t));
 
