@@ -12,7 +12,7 @@ task two is
 	entry twoDone;
 end two;
 
-task body one is 
+task body one is
 begin
 accept oneDone do
 	null;
@@ -21,7 +21,7 @@ end;
 		put(I);
 		if I mod 100 = 0 then
 			two.twoDone;
-			accept oneDone do 
+			accept oneDone do
 				null;
 			end;
 		end if;
@@ -30,7 +30,7 @@ end one;
 
 task body two is
 begin
-accept twoDone do 
+accept twoDone do
 	null;
 end;
 	for J in 2001 .. 3000 loop
