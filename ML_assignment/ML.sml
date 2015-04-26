@@ -72,3 +72,9 @@ fun height (leaf(_)) = (print("leaf "); 0)
  fun sortTree (op <) (leaf (h::t)) =  leaf (bubbleSort (op <) (h::t))
  | sortTree (op <) (node (h::t)) = node (map (fn x => (sortTree (op<) x)) (h::t));
 
+ Problem 7 :
+
+fun flattenTree (leaf (x)) = [x]
+| flattenTree (node(y::ys)) = flattenTree (y) @ flattenTree (node (ys))
+| flattenTree(_) = [];
+
