@@ -78,3 +78,11 @@ fun flattenTree (leaf (x)) = [x]
 | flattenTree (node(y::ys)) = flattenTree (y) @ flattenTree (node (ys))
 | flattenTree(_) = [];
 
+Problem 8:
+
+fun merge (op <) (h::t) nil = (h::t)
+| merge (op <) nil (h::t) = (h::t)
+| merge (op <) (x::xs) (y::ys) = if (x < y) then x::(merge (op <) xs (y::ys))
+                                            else y::(merge (op <) (x::xs) ys)
+| merge (op <) (_) (_) = [];
+
