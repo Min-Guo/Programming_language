@@ -53,8 +53,8 @@ datatype 'a mytree = leaf of 'a | node of 'a mytree list
 
 fun max (x, y) = if x > y then x else y;
 
-fun height (leaf(_)) = (print("leaf "); 0)
-| height(node(y::ys)) = ( print("123 "); 1 + max ( (height y), ((height (node ys) - 1))))
+fun height (leaf(_)) =  0
+| height(node(y::ys)) =  1 + max ( (height y), ((height (node ys) - 1)))
 | height(_) = 0;
 
 
