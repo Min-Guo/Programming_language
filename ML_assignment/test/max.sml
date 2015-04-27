@@ -1,3 +1,4 @@
+Control.Print.printDepth := 100;
 fun intBubble [] = []
  | intBubble (h::t) = min (h::t) ::extract (h::t)
 and
@@ -73,12 +74,13 @@ height (node [node [leaf [1]], leaf [2]]);
 height (node[leaf [1]]);
 
 
-fun sortTree (op <) (leaf (h::t)) =  leaf (bubbleSort (op <) (h::t))
- | sortTree (op <) (node (h::t)) = node ((sortTree (op <) h)::[(sortTree (op <) (node t))])
- |sortTree (op <) (_) = node [];
 
-sortTree (op <) (leaf [1, 2]);
-sortTree (op <) (node [leaf [4, 3], leaf [2, 1]]);
+
+fun sortTree (op <) (leaf (h::t)) =  leaf (bubbleSort (op <) (h::t))
+ | sortTree (op <) (node (h::t)) = node (map (fn x => (sortTree (op<) x)) (h::t));
+
+
+sortTree (op <) myTree;
 
 
 fun flattenTree (leaf (x)) = [x]
