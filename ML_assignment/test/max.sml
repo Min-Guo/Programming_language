@@ -1,4 +1,6 @@
-Control.Print.printDepth := 100;
+Control.Print.printDepth := 1000;
+Control.Print.printLength := 1000;
+
 fun intBubble [] = []
  | intBubble (h::t) = min (h::t) ::extract (h::t)
 and
@@ -103,3 +105,15 @@ merge (op <) [2,4,6,8,10] [1,3,5,7,9];
 val L1 = [leaf 3, node [leaf 1, node[leaf 2,leaf 4]]] ;
 val L2 = [node [leaf 5, leaf 6], node [ node [ node [ leaf 7 ]]]] ;
 merge (fn(tree1,tree2) => height tree1 < height tree2) L1 L2 ;
+
+
+fun mergeList (op <) (x::xs::nil) = merge (op <) x xs
+| mergeList (op <) (x::xs::t) = merge (op <) x (mergeList (op <) (xs::t));
+
+mergeList (op <) [[1, 3], [2, 4], [0, 6]];
+
+fun mergeTree (op <) (node (h::t)) = let
+        fun leafList (node (x::xs)) = flattenTree (sortTree (op <) (node (x::xs)))
+in mergeList (op <) (leafList (node (h::t))) end;
+
+mergeTree (op <) myTree;
