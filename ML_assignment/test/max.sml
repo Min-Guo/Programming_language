@@ -35,16 +35,15 @@ restList [n] = []
  | length (h::t) = 1 + length t;
 length [1, 2, 3, 4];
 
- fun bubbleSort (op <) [n] = [n]
- | bubbleSort (op <) (h::t) = let
- 		fun sort (op <) [n] = [n]
- 		| sort (op <) (x::y::t) = if x < y then x:: sort (op <) (y::t)
- 										else y::sort (op <) (x::t)
- in if sort (op <) (h::t) = (h::t) then (h::t)
- 			else bubbleSort (op <) (sort (op <) (h::t)) end;
-
-
+fun bubbleSort f [x] = [x]
+| bubbleSort f (h::t) = let
+        fun sort f [x] = [x]
+        |sort f (x::y::t) = if f (x, y) = true then x:: sort f (y::t)
+                                                else y::sort f (x::t)
+in if sort f (h::t) = (h::t) then (h::t)
+              else bubbleSort f (sort f (h::t)) end;
 bubbleSort (op <) [1,9, 3, 6, 7];
+bubbleSort (fn(a,b) => length a < length b) [[1, 9, 3, 6], [1], [2,4,6], [5,5]];
 
 
 
@@ -92,12 +91,15 @@ flattenTree myTree;
 
 
 
-fun merge (op <) (h::t) nil = (h::t)
-| merge (op <) nil (h::t) = (h::t)
-| merge (op <) (x::xs) (y::ys) = if (x < y) then x::(merge (op <) xs (y::ys))
-                                            else y::(merge (op <) (x::xs) ys)
-| merge (op <) (_) (_) = [];
+fun merge f (h::t) nil = (h::t)
+| merge f nil (h::t) = (h::t)
+| merge f (x::xs) (y::ys) = if f (x, y) = true then x::(merge f xs (y::ys))
+                                            else y::(merge f (x::xs) ys)
+| merge f (_) (_) = [];
 
 
 merge (op <) [1, 3, 5, 14] [2,6, 10];
 merge (op <) [2,4,6,8,10] [1,3,5,7,9];
+val L1 = [leaf 3, node [leaf 1, node[leaf 2,leaf 4]]] ;
+val L2 = [node [leaf 5, leaf 6], node [ node [ node [ leaf 7 ]]]] ;
+merge (fn(tree1,tree2) => height tree1 < height tree2) L1 L2 ;
