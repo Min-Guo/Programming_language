@@ -57,7 +57,10 @@ class MyList<T extends Comparable<T> & Addable<T> > extends ArrayList<T>  implem
     }
 
     public MyList<T> plus (MyList<T> list) {
-        return new MyList<T>(this.z.plus(list.z));
+        MyList<T> newList = new MyList<T>(z);
+        newList.addAll(this);
+        newList.addAll(list);
+        return newList;
     }
 
 }
@@ -75,6 +78,7 @@ public class Part1 {
     }
 
     public static void test() {
+
         MyList<A> m1 = new MyList<A>(new A(0));
         MyList<A> m2 = new MyList<A>(new A(0));
         for(Integer i = 1; i <= 5; i++) {
